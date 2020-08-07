@@ -1,4 +1,4 @@
-# Laboro Tomato: Instance segmantation dataset
+# Laboro Tomato: Instance segmentation dataset
 
 <!-- TOC -->
 
@@ -71,7 +71,7 @@ Laboro Tomato dataset can be used to solve cutting edge real-life tasks by fusin
 * Harvesting forecast based on tomato maturity
 * Automatic harvest of only ripened tomates
 * Identification and automatic thinning of deteriorated and obsolete tomatoes 
-* Splayig pesticides only on tomatoes at a specific ripening stage 
+* Sprayig pesticides only on tomatoes at a specific ripening stage 
 * Temperature control in greenhouse according to ripening stage
 * Quality control on production line of food manufactures, etc.
 
