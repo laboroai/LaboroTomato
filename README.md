@@ -108,9 +108,9 @@ Image [gallery](https://github.com/laboroai/LaboroTomatoDatasets/blob/master/exa
 
 ## Usage Guide
 
-Please refer to the [user guide mmdetection 3.x](USAGE_GUIDE_3x.md) for information on how to train or test on LaboroTomato dataset by using mmdetection version 3.x.
+Please refer to the [user guide mmdetection 3.x](usage_guide/usage_guide_mmdetection_v3.md) for information on how to train or test on LaboroTomato dataset by using mmdetection version 3.x.
 
-※ mmdetection version 2.x user can refer to [user guide mmdetection 2.x](USAGE_GUIDE_2x.md).
+※ mmdetection version 2.x user can refer to [user guide mmdetection 2.x](usage_guide/usage_guide_mmdetection_v2.md).
 
 ## Subsets
 
