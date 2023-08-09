@@ -25,7 +25,7 @@ mmdetection
 ├── tools
 ├── configs
 ├── data
-│   ├── laboro_tomato
+│   ├── laboro_tomatodat
 │   │   ├── annotations
 │   │   ├── train
 │   │   ├── test
@@ -48,15 +48,14 @@ mmdetection
 
 ### Add datasets to mmdetection
 
-To load data we need to create a new config file `mmdet/datasets/laboro_tomato.py` with corresponding subsets:
+Create `laboro_tomato.py` in `mmdet/datasets/` with content of [dataset coco](https://github.com/open-mmlab/mmdetection/blob/main/mmdet/datasets/coco.py) configuration file, change class name to `LaboroTomato`, and change `METAINFO` parameter as following example:
 
 ``` python
-from mmdet.registry import DATASETS
-from .coco import CocoDataset
-
 
 @DATASETS.register_module()
-class LaboroTomato(CocoDataset):
+class LaboroTomato(BaseDetDataset):
+    """Dataset for COCO."""
+
     METAINFO = {
         'classes':
         ('b_fully_ripened', 'b_half_ripened', 'b_green', 'l_fully_ripened', 'l_half_ripened', 'l_green'),
@@ -81,22 +80,20 @@ __all__ = [
 
 Configuration files setup on Tomato Mixed dataset example:  
 
-1. Create `laboro_tomato_coco_instance.py` in `configs/_base_/datasets/` with content of [coco_detection](https://github.com/open-mmlab/mmdetection/blob/master/configs/_base_/datasets/coco_detection.py) configuration file and change dataset type, root and path parameters:
+1. Create `laboro_tomato_coco_instance.py` in `configs/_base_/datasets/` with content of [coco instance](https://github.com/open-mmlab/mmdetection/blob/3.x/configs/_base_/datasets/coco_instance.py) configuration file and change dataset_type, data_root and path of dataloader like the follow example:
 
 ``` python
 dataset_type = 'LaboroTomato'
 data_root = 'data/laboro_tomato/'
 ...
-
 train_dataloader = dict(
     ...
     dataset=dict(
         ...
         ann_file='annotations/train.json',
-        data_prefix=dict(img='train/'),
+        data_prefix=dict(img='train/')
         ...
-    )
-)
+    ))
 val_dataloader = dict(
     ...
     dataset=dict(
@@ -104,19 +101,18 @@ val_dataloader = dict(
         ann_file='annotations/test.json',
         data_prefix=dict(img='test/'),
         ...
-    )
-)
+    ))
 test_dataloader = val_dataloader
 
 val_evaluator = dict(
     ...
     ann_file=data_root + 'annotations/test.json',
     ...
-)
+    )
 test_evaluator = val_evaluator
 ```
 
-2. Create `laboro_tomato_mask-rcnn_r50_fpn.py` in configs/_base_/models/ with content of [mask-rcnn_r50_fpn.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/_base_/models/faster_rcnn_r50_fpn.py) configuration file and change setting `num_classes`:
+2. Create `laboro_tomato_mask-rcnn_r50_fpn.py` in `configs/_base_/models/` with content of [mask-rcnn_r50_fpn.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/_base_/models/faster_rcnn_r50_fpn.py) configuration file and change setting `num_classes`:
 
 ``` python
 ...
@@ -141,7 +137,7 @@ model = dict(
 )
 ```
 
-3. Create `laboro_tomato_mask-rcnn_r50_fpn_1x_coco.py` in configs/mask_rcnn/ with content of [mask_rcnn_r50_fpn_1x_coco.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py) configuration file and change path setting:
+3. Create `laboro_tomato_mask-rcnn_r50_fpn_1x_coco.py` in `configs/mask_rcnn/` with content of [mask_rcnn_r50_fpn_1x_coco.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py) configuration file and change path setting:
 
 ``` python
 _base_ = [
