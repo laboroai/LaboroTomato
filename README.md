@@ -14,6 +14,8 @@
     - [Pretrained model](#pretrained-model)
       - [Output examples](#output-examples)
   - [Usage Guide](#usage-guide)
+    - [MMDetection v3.x](#mmdetection-v3x)
+    - [MMDetection v2.x](#mmdetection-v2x)
   - [Subsets](#subsets)
     - [Details](#details)
     - [Pretrained models](#pretrained-models)
@@ -87,13 +89,13 @@ Laboro Tomato download [link](http://assets.laboro.ai/laborotomato/laboro_tomato
 
 ### Pretrained model
 
-Model have been trained by [mmdetection](https://github.com/open-mmlab/mmdetection) V2.0 on 4 Tesla-V100 and based on Mask R-CNN with R-50-FPN 1x backbone:
+Model have been trained by [MMDetection](https://github.com/open-mmlab/mmdetection) V2.0 on 4 Tesla-V100 and based on Mask R-CNN with R-50-FPN 1x backbone:
 
 |  Dataset      |  bbox AP  |   mask AP    |    Download     |
 |---------------|:---------:|:------------:|:----------------:|
 |Laboro Tomato   | 64.3 | 65.7 | [model](http://assets.laboro.ai/laborotomato/laboro_tomato_48ep.pth) |
 
-We haven't done hyperparameters tuning for baseline model training and used default values, provided by original mmdetection configs.  
+We haven't done hyperparameters tuning for baseline model training and used default values, provided by original MMDetection configs.  
 Training parameters:  
 
 ``` text
@@ -108,9 +110,11 @@ Image [gallery](https://github.com/laboroai/LaboroTomatoDatasets/blob/master/exa
 
 ## Usage Guide
 
-Please refer to the [user guide mmdetection 3.x](usage_guide/usage_guide_mmdetection_v3.md) for information on how to train or test on LaboroTomato dataset by using mmdetection version 3.x.
+### MMDetection v3.x
+Please refer to the [user guide MMDetection 3.x](usage_guide/usage_guide_mmdetection_v3.md) for information on how to train or test on LaboroTomato dataset by using MMDetection version 3.x.
 
-※ mmdetection version 2.x user can refer to [user guide mmdetection 2.x](usage_guide/usage_guide_mmdetection_v2.md).
+### MMDetection v2.x
+MMDetection version 2.x user can refer to [user guide MMDetection 2.x](usage_guide/usage_guide_mmdetection_v2.md).
 
 ## Subsets
 
@@ -142,7 +146,7 @@ image_resolutions: 3024x4032, 3120x4160
 
 ### Pretrained models
 
-As well as main dataset, Laboro tomato big and Laboro tomato little have been trained by [mmdetection](https://github.com/open-mmlab/mmdetection) V2.0 on 4 Tesla-V100 and based on Mask R-CNN with R-50-FPN 1x backbone:
+As well as main dataset, Laboro tomato big and Laboro tomato little have been trained by [MMDetection](https://github.com/open-mmlab/MMDetection) V2.0 on 4 Tesla-V100 and based on Mask R-CNN with R-50-FPN 1x backbone:
 
 |  Dataset      |  bbox AP  |   mask AP    |    Download     |
 |---------------|:---------:|:------------:|:----------------:|

@@ -1,21 +1,19 @@
 
-# Usage guide mmdetection 3.x
+# Usage guide MMDetection 3.x
 
-We will guide you on using mmdetection 3.x to train, test, and evaluate a model on laboro tomato dataset.
+We will guide you on using MMDetection 3.x to train, test, and evaluate a model on laboro tomato dataset.
 
-## Installation
+## 1. Installation
 
-### Requirements
+### 1.1. Requirements
 
 Ubuntu Linux with Python ≥ 3.8
 
-### Install mmdetection
+### 1.2. Install MMDetection
 
-Please prepare mmdetection environment by official [installation guide](https://mmdetection.readthedocs.io/en/dev-3.x/get_started.html).
+Please prepare MMDetection environment by official [installation guide](https://mmdetection.readthedocs.io/en/dev-3.x/get_started.html).
 
-## Prepare dataset
-
-### Download dataset
+## 2. Download dataset
 
 It is recommended to symlink the dataset root to $MMDETECTION/data. If your folder structure is different, you may need to change the corresponding paths in config files.
 
@@ -31,7 +29,7 @@ mmdetection
 │   │   ├── test
 ```
 
-### Download pre_trained model
+## 3. Download pre_trained model
 
 It is recommended to symlink the model root to $MMDETECTION/pre_trained_model. If your folder structure is different, you may need to change the corresponding paths in config files.
 
@@ -46,7 +44,9 @@ mmdetection
 
 ```
 
-### Add datasets to mmdetection
+## 4. Evaluation by MMDetection
+
+### 4.1. Customize dataset for MMDetection
 
 Create `laboro_tomato.py` in `mmdet/datasets/` with content of [dataset coco](https://github.com/open-mmlab/mmdetection/blob/main/mmdet/datasets/coco.py) configuration file, change class name to `LaboroTomato`, and change `METAINFO` parameter as following example:
 
@@ -76,11 +76,11 @@ __all__ = [
 
 ```
 
-## Configuration files
+### 4.2. Configuration dataloader
 
 Configuration files setup on Tomato Mixed dataset example:  
 
-1. Create `laboro_tomato_coco_instance.py` in `configs/_base_/datasets/` with content of [coco instance](https://github.com/open-mmlab/mmdetection/blob/3.x/configs/_base_/datasets/coco_instance.py) configuration file and change dataset_type, data_root and path of dataloader like the follow example:
+Create `laboro_tomato_coco_instance.py` in `configs/_base_/datasets/` with content of [coco instance](https://github.com/open-mmlab/mmdetection/blob/3.x/configs/_base_/datasets/coco_instance.py) configuration file and change dataset_type, data_root and path of dataloader like the follow example:
 
 ``` python
 dataset_type = 'LaboroTomato'
@@ -112,7 +112,9 @@ val_evaluator = dict(
 test_evaluator = val_evaluator
 ```
 
-2. Create `laboro_tomato_mask-rcnn_r50_fpn.py` in `configs/_base_/models/` with content of [mask-rcnn_r50_fpn.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/_base_/models/faster_rcnn_r50_fpn.py) configuration file and change setting `num_classes`:
+### 4.3. Configuration model
+
+Create `laboro_tomato_mask-rcnn_r50_fpn.py` in `configs/_base_/models/` with content of [mask-rcnn_r50_fpn.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/_base_/models/faster_rcnn_r50_fpn.py) configuration file and change setting `num_classes`:
 
 ``` python
 ...
@@ -137,7 +139,9 @@ model = dict(
 )
 ```
 
-3. Create `laboro_tomato_mask-rcnn_r50_fpn_1x_coco.py` in `configs/mask_rcnn/` with content of [mask_rcnn_r50_fpn_1x_coco.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py) configuration file and change path setting:
+### 4.4. Configuration base setting
+
+Create `laboro_tomato_mask-rcnn_r50_fpn_1x_coco.py` in `configs/mask_rcnn/` with content of [mask_rcnn_r50_fpn_1x_coco.py](https://github.com/open-mmlab/mmdetection/blob/master/configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py) configuration file and change path setting:
 
 ``` python
 _base_ = [
@@ -148,7 +152,27 @@ _base_ = [
 
 ```
 
-## Evaluation
+### 4.5. Configuration example
+
+An example of the configuration file is stored in `/config_example`, please refer to it for usage.
+
+```text
+config_example
+├── configs
+│   ├── _base_
+│   │   ├── datasets
+│   │   │   └── laboro_tomato_coco_instance.py
+│   │   └── models
+│   │       └── laboro_tomato_mask-rcnn_r50_fpn.py
+│   └── mask_rcnn
+│       └── laboro_tomato_mask-rcnn_r50_fpn_1x_coco.py
+└── mmdet
+    └── datasets
+        ├── __init__.py
+        └── laboro_tomato.py
+```
+
+## 5. Run evaluation
 
 You can use the following commands to test a dataset:
 
@@ -162,7 +186,7 @@ python tools/test.py configs/mask_rcnn/laboro_tomato_mask-rcnn_r50_fpn_1x_coco.p
                      pre_trained_model/laboro_tomato_48ep.pth 4 --out results.pkl --eval bbox segm                     
 ```
 
-## Train a model
+## 6. Run model training
 
 To train your model finish all steps from _Test a model_ section and change learning rate and total epoch, steps at `configs/_base_/schedules/schedule_1x.py`. The default learning rate in config files is for 8 GPUs and 2 img/gpu (`base_batch_size` = 16 (8x2)). According to the [Linear Scaling Rule](https://arxiv.org/abs/1706.02677), you need to set the learning rate proportional to the batch size if you use different GPUs or images per GPU, e.g., lr=0.01 for 4 GPUs x 2 img/gpu and lr=0.08 for 16 GPUs x 4 img/gpu.
 
