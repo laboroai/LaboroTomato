@@ -19,7 +19,7 @@
   - [Subsets](#subsets)
     - [Details](#details)
     - [Pretrained models](#pretrained-models)
-    - [Download subests](#download-subests)
+    - [Download subsets](#download-subsets)
 
 ## Overview
 
@@ -161,7 +161,7 @@ step = [32, 44]
 total epoch = 48
 ```
 
-### Download subests
+### Download subsets
 
 - [Laboro tomato big](http://assets.laboro.ai/laborotomato/laboro_tomato_big.zip)  
 - [Laboro tomato little](http://assets.laboro.ai/laborotomato/laboro_tomato_little.zip)  
