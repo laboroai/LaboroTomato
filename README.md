@@ -68,7 +68,7 @@ image_resolutions: 3024x4032, 3120x4160
 Laboro Tomato dataset can be used to solve cutting edge real-life tasks by fusing various technologies:  
 
 - Harvesting forecast based on tomato maturity
-- Automatic harvest of only ripened tomates
+- Automatic harvest of only ripened tomatoes
 - Identification and automatic thinning of deteriorated and obsolete tomatoes
 - Sprayig pesticides only on tomatoes at a specific ripening stage
 - Temperature control in greenhouse according to ripening stage
