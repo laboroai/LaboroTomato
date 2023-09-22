@@ -14,8 +14,8 @@
     - [Pretrained model](#pretrained-model)
       - [Output examples](#output-examples)
   - [Usage Guide](#usage-guide)
-    - [MMDetection v3.x](#mmdetection-v3x)
-    - [MMDetection v2.x](#mmdetection-v2x)
+    - [MMDetection v3.x usage guide](#mmdetection-v3x-usage-guide)
+    - [MMDetection v2.x usage guide](#mmdetection-v2x-usage-guide)
   - [Subsets](#subsets)
     - [Details](#details)
     - [Pretrained models](#pretrained-models)
@@ -110,11 +110,11 @@ Image [gallery](https://github.com/laboroai/LaboroTomatoDatasets/blob/master/exa
 
 ## Usage Guide
 
-### MMDetection v3.x
-Please refer to the [user guide MMDetection 3.x](usage_guide/usage_guide_mmdetection_v3.md) for information on how to train or test on LaboroTomato dataset by using MMDetection version 3.x.
+### MMDetection v3.x usage guide
+Please refer to the [usage guide MMDetection 3.x](usage_guide/usage_guide_mmdetection_v3.md) for information on how to train or test on LaboroTomato dataset by using MMDetection version 3.x.
 
-### MMDetection v2.x
-MMDetection version 2.x user can refer to [user guide MMDetection 2.x](usage_guide/usage_guide_mmdetection_v2.md).
+### MMDetection v2.x usage guide
+MMDetection version 2.x user can refer to [usage guide MMDetection 2.x](usage_guide/usage_guide_mmdetection_v2.md) for information on how to train or test on LaboroTomato dataset by using MMDetection version 2.0 and 2.1.
 
 ## Subsets
 
