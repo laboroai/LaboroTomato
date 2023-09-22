@@ -188,7 +188,7 @@ python tools/test.py configs/mask_rcnn/laboro_tomato_mask-rcnn_r50_fpn_1x_coco.p
 
 ## 6. Run model training
 
-To train your model finish all steps from _Test a model_ section and change learning rate and total epoch, steps at `configs/_base_/schedules/schedule_1x.py`. The default learning rate in config files is for 8 GPUs and 2 img/gpu (`base_batch_size` = 16 (8x2)). According to the [Linear Scaling Rule](https://arxiv.org/abs/1706.02677), you need to set the learning rate proportional to the batch size if you use different GPUs or images per GPU, e.g., lr=0.01 for 4 GPUs x 2 img/gpu and lr=0.08 for 16 GPUs x 4 img/gpu.
+To train your model, please change learning rate and total epoch, steps at `configs/_base_/schedules/schedule_1x.py`. The default learning rate in config files is for 8 GPUs and 2 img/gpu (`base_batch_size` = 16 (8x2)). According to the [Linear Scaling Rule](https://arxiv.org/abs/1706.02677), you need to set the learning rate proportional to the batch size if you use different GPUs or images per GPU, e.g., lr=0.01 for 4 GPUs x 2 img/gpu and lr=0.08 for 16 GPUs x 4 img/gpu.
 
 ``` python
 optim_wrapper = dict(
