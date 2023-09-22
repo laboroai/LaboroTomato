@@ -23,7 +23,7 @@ mmdetection
 ├── tools
 ├── configs
 ├── data
-│   ├── laboro_tomatodat
+│   ├── laboro_tomato
 │   │   ├── annotations
 │   │   ├── train
 │   │   ├── test
