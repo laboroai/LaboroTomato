@@ -8,7 +8,7 @@
     - [Annotation details](#annotation-details)
     - [Dataset details](#dataset-details)
     - [Scope of application](#scope-of-application)
-    - [Licence](#licence)
+    - [License](#license)
     - [Download dataset](#download-dataset)
   - [Baseline](#baseline)
     - [Pretrained model](#pretrained-model)
@@ -74,7 +74,7 @@ Laboro Tomato dataset can be used to solve cutting edge real-life tasks by fusin
 - Temperature control in greenhouse according to ripening stage
 - Quality control on production line of food manufactures, etc.
 
-### Licence
+### License
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" width="100" /></a></br>
 
