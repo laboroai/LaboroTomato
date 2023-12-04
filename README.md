@@ -83,7 +83,7 @@ Laboro Tomato dataset can be used to solve cutting edge real-life tasks by fusin
 
 ### Download dataset
 
-Laboro Tomato download [link](http://assets.laboro.ai/laborotomato/laboro_tomato.zip)  
+Laboro Tomato download [link](http://assets.laboro.ai.s3.amazonaws.com/laborotomato/laboro_tomato.zip)  
 
 ## Baseline
 
@@ -93,7 +93,7 @@ Model have been trained by [MMDetection](https://github.com/open-mmlab/mmdetecti
 
 |  Dataset      |  bbox AP  |   mask AP    |    Download     |
 |---------------|:---------:|:------------:|:----------------:|
-|Laboro Tomato   | 64.3 | 65.7 | [model](http://assets.laboro.ai/laborotomato/laboro_tomato_48ep.pth) |
+|Laboro Tomato   | 64.3 | 65.7 | [model](http://assets.laboro.ai.s3.amazonaws.com/laborotomato/laboro_tomato_48ep.pth) |
 
 We haven't done hyperparameters tuning for baseline model training and used default values, provided by original MMDetection configs.  
 Training parameters:  
@@ -150,8 +150,8 @@ As well as main dataset, Laboro tomato big and Laboro tomato little have been tr
 
 |  Dataset      |  bbox AP  |   mask AP    |    Download     |
 |---------------|:---------:|:------------:|:----------------:|
-|Laboro tomato big     | 67.9 | 68.4 | [model](http://assets.laboro.ai/laborotomato/laboro_tomato_big_48ep.pth) |
-|Laboro tomato little  | 62.7 | 63.1 | [model](http://assets.laboro.ai/laborotomato/laboro_tomato_little_48ep.pth) |
+|Laboro tomato big     | 67.9 | 68.4 | [model](http://assets.laboro.ai.s3.amazonaws.com/laborotomato/laboro_tomato_big_48ep.pth) |
+|Laboro tomato little  | 62.7 | 63.1 | [model](http://assets.laboro.ai.s3.amazonaws.com/laborotomato/laboro_tomato_little_48ep.pth) |
 
 Training parameters:  
 
@@ -163,5 +163,5 @@ total epoch = 48
 
 ### Download subsets
 
-- [Laboro tomato big](http://assets.laboro.ai/laborotomato/laboro_tomato_big.zip)  
-- [Laboro tomato little](http://assets.laboro.ai/laborotomato/laboro_tomato_little.zip)  
+* [Laboro tomato big](http://assets.laboro.ai.s3.amazonaws.com/laborotomato/laboro_tomato_big.zip)  
+* [Laboro tomato little](http://assets.laboro.ai.s3.amazonaws.com/laborotomato/laboro_tomato_little.zip)  
